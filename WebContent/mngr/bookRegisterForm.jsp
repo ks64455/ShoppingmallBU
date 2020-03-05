@@ -15,7 +15,7 @@
 <title>Insert title here</title>
 <c:if test="${empty sessionScope.id }">
 	<meta http-equiv="Refresh"
-		content="0;url=shppingmall/mg/managerMain.do">
+		content="0;url=shoppingmall/mg/managerMain.do">
 </c:if>
 </head>
 <body>
