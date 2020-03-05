@@ -13,7 +13,7 @@ import com.sun.jmx.snmp.Timestamp;
 public class BookRegisterProAction implements CommandAction {
 
 	@Override
-	public String requsetPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
+	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		// TODO Auto-generated method stub
 		request.setCharacterEncoding("UTF-8");
 
@@ -48,7 +48,7 @@ public class BookRegisterProAction implements CommandAction {
 			e.printStackTrace();
 		}
 		//폼으로부터 넘어온 정보 중 파일이 아닌 정보를 얻어냄
-		mngrDataBean book = new mngrDataBean();
+		MngrDataBean book = new MngrDataBean();
 		String book_kind = imageUp.getParameter("book_kind");
 		String book_title = imageUp.getParameter("book_title");
 		String book_price = imageUp.getParameter("book_price");
