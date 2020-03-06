@@ -42,7 +42,7 @@ public class BookRegisterProAction implements CommandAction {
 				// 파일 정보가 있다면
 				while (files.hasMoreElements()) {
 					// input 태그의 속성이 file인 태그의 name 속성값 : 파라미터이름
-					String name = (String) files.nextElement();
+					String name = (String)files.nextElement();
 
 					// 서버에 저장된 파일 이름
 					filename = imageUp.getFilesystemName(name);

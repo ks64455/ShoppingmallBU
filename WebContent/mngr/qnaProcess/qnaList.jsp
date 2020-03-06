@@ -10,7 +10,7 @@
 <title>Insert title here</title>
 <script type="text/javascript"
 	src="http://code.jquery.com/jquery.min.js"></script>
-<script type="text/javascript" src="/shoppingmall/mngr/qnalist.js"></script>
+<script type="text/javascript" src="/shoppingmall/mngr/qnaProcess/qnalist.js"></script>
 </head>
 <body>
 	<c:if test="${empty sessionScope.id }">

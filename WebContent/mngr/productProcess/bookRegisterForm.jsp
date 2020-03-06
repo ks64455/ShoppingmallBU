@@ -10,7 +10,7 @@
 <link rel="stylesheet" hreflang="/shoppingmall/css/style.css">
 <script src="/shoppingmall/js/jquery-1.11.0.min.js"></script>
 <script src="/shoppingmall/js/jquery.form.min.js"></script>
-<script src="/shoppingmall/mngr/productProcess/bookregit.js"></script>
+<script src="/shoppingmall/mngr/productProcess/bookregist.js"></script>
 
 <title>Insert title here</title>
 <c:if test="${empty sessionScope.id }">
