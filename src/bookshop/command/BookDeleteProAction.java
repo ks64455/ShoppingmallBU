@@ -5,7 +5,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import bookshop.bean.MngrDBBean;
 
-public class bookDeleteProAction implements CommandAction {
+public class BookDeleteProAction implements CommandAction {
 
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {

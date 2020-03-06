@@ -8,9 +8,9 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" hreflang="/shoppingmall/css/style.css">
-<script src="/shoppingmall/js/jquery-1.11.0.min.js"></script>
-<script src="/shoppingmall/js/jquery.form.min.js"></script>
-<script src="/shoppingmall/mngr/productProcess/bookregist.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery.min.js" ></script>
+<script type="text/javascript" src="/shoppingmall/js/jquery.form.min.js"></script>
+<script type="text/javascript" src="/shoppingmall/mngr/productProcess/bookregist.js"></script>
 
 <title>Insert title here</title>
 <c:if test="${empty sessionScope.id }">
@@ -25,7 +25,7 @@
 		<button id="bookList">목록으로</button>
 	</div>
 	<form id="upForm1" action="/shoppingmall/mg/bookRegisterPro.do"
-		method="post" enctype="multipartform=data">
+		method="post" enctype="multipart/form-data">
 		<div id="bookRegistForm" class="box">
 			<ul>
 				<li><label for="book_kind">분류선택</label> <select id="book_kind"

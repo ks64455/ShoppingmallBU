@@ -11,10 +11,10 @@
 <script src="/shoppingmall/js/jquery.form.min.js"></script>
 <script src="/shoppingmall/mngr/productProcess/bookupdate.js"></script>
 <title>Insert title here</title>
-<%-- <c:if test="${empty sessionScope.id }">
+ <c:if test="${empty sessionScope.id }">
 	<meta http-equiv="Refresh"
 		content="0;url=shoppingmall/mg/managerMain.do">
-</c:if> --%>
+</c:if> 
 </head>
 <body>
 
