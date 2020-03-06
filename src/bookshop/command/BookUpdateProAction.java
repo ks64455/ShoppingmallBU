@@ -10,22 +10,22 @@ import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 import com.sun.jmx.snmp.Timestamp;
 
-public class BookRegisterProAction implements CommandAction {
+public class BookUpdateProAction implements CommandAction {
 
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		// TODO Auto-generated method stub
+		
 		request.setCharacterEncoding("UTF-8");
-
+		
 		String filename = "";
 		String realFolder = "";// 웹 어플리케이션상의 절대 경로 저장
 		String saveFolder = "/bookImage";// 파일 업로드 폴더 지정
 		String enctype = "UTF-8"; // 인코딩 타입
 		int maxSize = 1 * 1024 * 1024; // 최대 업로드될 파일 크기 1MB
-
+		
 		MultipartRequest imageUp = null;
-
-		// 웹 애플리케이션상의 절대 경로를 구함
+		
 		ServletContext context = request.getSession().getServletContext();
 		realFolder = context.getRealPath(saveFolder);
 
@@ -49,6 +49,7 @@ public class BookRegisterProAction implements CommandAction {
 		}
 		//폼으로부터 넘어온 정보 중 파일이 아닌 정보를 얻어냄
 		MngrDataBean book = new MngrDataBean();
+		int book_id = Integer.parseInt(imageUp.getParameter("book_id"));
 		String book_kind = imageUp.getParameter("book_kind");
 		String book_title = imageUp.getParameter("book_title");
 		String book_price = imageUp.getParameter("book_price");
@@ -77,11 +78,12 @@ public class BookRegisterProAction implements CommandAction {
 				book.setDiscount_rate(Byte.parseByte(discount_rate));
 				book.setReg_date(new Timestamp(System.currentTimeMillis()));
 				
-				//DB 연동해서 상품 수정 처리
+				//DB 연동 - 넘어온 정보를 테이블의 레코드로 추가
 				MngrDBBean bookProcess = MngrDBbean.getInstance();
-				bookProcess.uqdateBook(book, book_id);
-				s
+				bookProcess.insertBook(book);
+				
 				request.setAttribute("book_kind", book_kind);
-				return "/mngr/productProcess/bookUpdatePro.jsp";
+				return "/mngr/productProcess/bookRegisterPro.jsp";
 	}
+
 }
